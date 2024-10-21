@@ -21,40 +21,36 @@ public class MainMenu
                 new SelectionPrompt<string>()
                     .Title("[green]Main Menu[/]")
                     .PageSize(10)
-                    .AddChoices("Add Product", "Display All Products", "Filter Products", "Sort Products",
-                        "File Operations",
-                        "Serialization Operations", "Delete Product", "Exit")
+                    .AddChoices("Add Product", "Display All Products", "Search Products", "Filter Products",
+                        "Sort Products", "File Operations", "Serialization Operations",
+                        "Delete Product", "Exit")
             );
 
             switch (selection)
             {
-                case "Add Product":
-                    var addProductCommand = new AddProductCommand(_products);
-                    addProductCommand.Execute();
+                case "Add Product": 
+                    new AddProductCommand(_products).Execute();
                     break;
                 case "Display All Products":
-                    var displayAllProductsCommand = new DisplayAllProductsCommand(_products);
-                    displayAllProductsCommand.Execute();
+                    new DisplayAllProductsCommand(_products).Execute();
+                    break;
+                case "Search Products":
+                    new SearchProductsCommand(_products).Execute();
                     break;
                 case "Filter Products":
-                    var filterProductsCommand = new FilterProductsCommand(_products);
-                    filterProductsCommand.Execute();
+                    new FilterProductsCommand(_products).Execute();
                     break;
                 case "Sort Products":
-                    var sortProductsCommand = new SortProductsCommand(_products);
-                    sortProductsCommand.Execute();
+                    new SortProductsCommand(_products).Execute();
                     break;
                 case "File Operations":
-                    var fileOperationsCommand = new FileOperationsCommand(_products);
-                    fileOperationsCommand.Execute();
+                    new FileOperationsCommand(_products).Execute();
                     break;
                 case "Serialization Operations":
-                    var serializationCommand = new SerializationCommand(_products);
-                    serializationCommand.Execute();
+                    new SerializationCommand(_products).Execute();
                     break;
                 case "Delete Product":
-                    var deleteProductCommand = new DeleteProductCommand(_products);
-                    deleteProductCommand.Execute();
+                    new DeleteProductCommand(_products).Execute();
                     break;
                 case "Exit":
                     AnsiConsole.MarkupLine("[bold green]Exiting program...[/]");
