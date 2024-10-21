@@ -70,6 +70,7 @@ Here is a breakdown of the key commands available in the application:
 - **AddProductCommand**: Adds a new product to the list.
 - **DisplayAllProductsCommand**: Displays all products in a formatted table.
 - **FilterProductsCommand**: Filters products by criteria such as price or stock.
+- **SearchProductsCommand**: Searches for products by all parameters.
 - **SortProductsCommand**: Sorts products by price, stock, and other attributes.
 - **DeleteProductCommand**: Deletes a specific product or all products.
 - **FileOperationsCommand**: Handles saving and loading product data to/from a file.
@@ -93,6 +94,7 @@ OnlineStore/
 │   ├── DisplayAllProductsCommand.cs
 │   ├── FileOperationsCommand.cs
 │   ├── FilterProductsCommand.cs
+│   ├── SearchProductsCommand.cs
 │   ├── SerializationCommand.cs
 │   └── SortProductsCommand.cs
 │
