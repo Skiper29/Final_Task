@@ -28,6 +28,7 @@ public class DisplayAllProductsCommand : ICommand
         table.AddColumn("[yellow]Price[/]");
         table.AddColumn("[yellow]Stock[/]");
         table.AddColumn("[yellow]Product Type[/]");
+        table.Border(TableBorder.Rounded);
 
         foreach (var product in _products)
         {
