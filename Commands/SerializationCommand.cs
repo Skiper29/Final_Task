@@ -62,6 +62,7 @@ public class SerializationCommand : ICommand
         if (!File.Exists(filePath))
         {
             AnsiConsole.MarkupLine("[bold red]File not found![/]");
+            Logger.LogWarning("File not found");
             return;
         }
 

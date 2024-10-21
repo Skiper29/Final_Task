@@ -39,7 +39,7 @@ public class FileOperationsCommand : ICommand
     private void SaveProductsToFile()
     {
         var filePath = AnsiConsole.Prompt(new TextPrompt<string>("Enter file name to save:"));
-        using var writer = new StreamWriter(filePath);
+        using var writer = new StreamWriter(filePath, options: new FileStreamOptions { Mode = FileMode.Create });
         _products.ForEach(product =>
             writer.WriteLine(
                 $"{product.GetType().Name}, {product.Id}, {product.Description}, {product.Stock}, {product.Price}"));
@@ -71,6 +71,7 @@ public class FileOperationsCommand : ICommand
                 Logger.LogError("Error parsing product", e);
             }
         }
+
         AnsiConsole.MarkupLine("[bold green]Products loaded![/]");
     }
 

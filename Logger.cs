@@ -11,7 +11,7 @@ public class Logger
     {
         try
         {
-            XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
+            XmlConfigurator.Configure(new FileInfo("log4net.config"));
         }
         catch (Exception ex)
         {
@@ -28,5 +28,9 @@ public class Logger
     {
         Log.Info(message);
     }
-    
+
+    public static void LogWarning(string message)
+    {
+        Log.Warn(message);
+    }
 }

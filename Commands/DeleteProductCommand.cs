@@ -48,8 +48,7 @@ public class DeleteProductCommand : ICommand
             new SelectionPrompt<IProduct>()
                 .Title("Select product to delete")
                 .PageSize(10)
-                .AddChoices(_products).UseConverter(product =>
-                    $"ID: {product.Id}, Description: {product.Description}, Price: {product.Price}, Stock: {product.Stock}, Type: {product.GetType().Name}")
+                .AddChoices(_products).UseConverter(product => product.ToString()!)
         );
         
         _products.Remove(selectedProduct);
